@@ -2,6 +2,7 @@ import { app, BrowserWindow, ipcMain, nativeTheme, dialog, Notification, nativeI
 import { xml2json } from 'xml-js'
 import path from 'node:path';
 import fs from 'node:fs';
+import os from 'node:os';
 import child from 'node:child_process';
 import process from 'node:process';
 import http from 'node:http';
@@ -10,10 +11,36 @@ import { privateKey, iv } from '../secretConfig.json';
 import started from 'electron-squirrel-startup';
 import log from 'electron-log/main';
 import {authorization} from '../src/settings/userConfig.json';
-import updateApp from 'update-electron-app';
+import { updateElectronApp, UpdateSourceType } from 'update-electron-app';
+import dropIconData from '../src/assets/icons/SelectionBackground.png';
+import AutoLaunch  from 'auto-launch';
 
+const dropIcon = nativeImage.createFromDataURL(dropIconData)
 
-updateApp();
+var autoLouncher = new AutoLaunch({
+	name: 'AdamWeb',
+});
+
+autoLouncher.isEnabled()
+.then(function(isEnabled){
+	if(isEnabled){
+	    return;
+	}
+	autoLouncher.enable();
+})
+.catch(function(err){
+    // handle error
+});
+
+updateElectronApp({
+  updateSource: {
+    type: UpdateSourceType.ElectronPublicUpdateService,
+    repo: 'Sergey-Khomyakov/AdamDesktopApp',
+    host: 'https://github.com/'
+  },
+  updateInterval: '1 hour',
+  logger: log
+})
 
 log.initialize();
 log.info(`Start Application: ${app.getVersion()} (${process.platform})`);
@@ -412,7 +439,7 @@ app.whenReady().then(() => {
     const url = domain + "/getFile?path=" + pathLink;
     const fileName = obj.fileName
     http.get(url, (response) =>{
-      const tempFilePath = path.join(__dirname, fileName); // Temporary path to save the file
+      const tempFilePath = path.join(os.tmpdir(), fileName); // Temporary path to save the file
 
       // Create a write stream to save the file
       const fileStream = fs.createWriteStream(tempFilePath);
@@ -425,7 +452,7 @@ app.whenReady().then(() => {
         // Start drag operation
         event.sender.startDrag({
             file: tempFilePath,
-            icon: './src/assets/icons/SelectionBackground.png' // Path to your icon
+            icon: dropIcon,// Path to your icon
       });
 
         fileStream.on('error', (err) => {
@@ -433,8 +460,7 @@ app.whenReady().then(() => {
           event.sender.send('drag-error', { message: "Error retrieving files", error: err.message });
       });
     });
-
-    })
+  })
 
     // event.sender.startDrag({
     //   file: filePath,

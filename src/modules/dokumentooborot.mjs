@@ -241,5 +241,5 @@ const getIcon = (type) => {
         return folder;
     }
 
-    return icon;
+    return txt;
 }
