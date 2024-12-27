@@ -1,5 +1,6 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+const { gitTokin } = require('./secretConfig.json');
 
 module.exports = {
   packagerConfig: {
@@ -10,6 +11,7 @@ module.exports = {
     {
       name: '@electron-forge/publisher-github',
       config: {
+        authToken: gitTokin,
         repository: {
           owner: 'Sergey-Khomyakov',
           name: 'AdamDesktopApp'
