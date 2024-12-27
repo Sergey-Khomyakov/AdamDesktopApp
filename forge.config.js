@@ -2,6 +2,15 @@ const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 const { gitTokin } = require('./secretConfig.json');
 
+const commonLinuxConfig = {
+  categories: ['Development', 'Utility'],
+  icon: {
+    '1024x1024': 'src/assets/favicon.png',
+    scalable: 'src/assets/favicon.png',
+  },
+  mimeType: ['x-scheme-handler/electron-fiddle'],
+};
+
 module.exports = {
   packagerConfig: {
     asar: true,
@@ -37,15 +46,13 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {
-        options: {
-          icon: 'src/assets/favicon.png'
-        }
-      },
+      platforms: ['linux'],
+      config: commonLinuxConfig,
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      platforms: ['linux'],
+      config: commonLinuxConfig,
     },
   ],
   plugins: [

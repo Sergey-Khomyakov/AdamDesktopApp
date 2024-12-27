@@ -1,7 +1,7 @@
 {
   "name": "adamweb",
   "productName": "adamweb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
@@ -10,6 +10,11 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
+  },
+  "repository": "https://github.com/Sergey-Khomyakov/AdamDesktopApp",
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",

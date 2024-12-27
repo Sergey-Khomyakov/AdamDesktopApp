@@ -17,20 +17,30 @@ import AutoLaunch  from 'auto-launch';
 
 const dropIcon = nativeImage.createFromDataURL(dropIconData)
 
-var autoLouncher = new AutoLaunch({
-	name: 'AdamWeb',
-});
 
-autoLouncher.isEnabled()
-.then(function(isEnabled){
-	if(isEnabled){
-	    return;
-	}
-	autoLouncher.enable();
-})
-.catch(function(err){
-    // handle error
-});
+const isDevelopment = process.env.NODE_ENV === "production";
+
+if(isDevelopment){
+  const appFolder = path.dirname(process.execPath)
+  const updateExe = path.resolve(appFolder, '..', 'Update.exe')
+  const exeName = path.basename(process.execPath)
+  
+  var autoLouncher = new AutoLaunch({
+    name: 'AdamWeb',
+    path: path.join(appFolder, exeName)
+  });
+  
+  autoLouncher.isEnabled()
+  .then(function(isEnabled){
+    if(isEnabled){
+        return;
+    }
+    autoLouncher.enable();
+  })
+  .catch(function(err){
+      // handle error
+  });
+}
 
 updateElectronApp({
   updateSource: {
@@ -82,7 +92,11 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+
+
+
   createWindow();
+  
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   app.on('activate', () => {
@@ -388,7 +402,7 @@ app.whenReady().then(() => {
     } catch (error) {
         console.error('Ошибка при запросе к API:', error);
     }
-});
+  });
 
 
   ipcMain.handle('dokumentooborotGetFolders', async (event, params) => {
