@@ -1,0 +1,7 @@
+mixin eventCard(items)
+    each item in items 
+        div(eventCard="", class="@container/eventCard group flex flex-col gap-2 cursor-pointer")
+            p(class="font-Manrope font-semibold text-white dark:text-black text-sm") #{item.date}
+            p(class="font-Manrope font-semibold text-white dark:text-black text-lg group-hover:text-primary") #{item.title}
+            p(class="font-Manrope font-semibold text-white dark:text-black text-sm") #{item.description}
+            a(href=item.link, class=" inset-0 w-full h-full")

@@ -1,0 +1,55 @@
+extends ../../../pug/layout/_layout.pug
+include ../../../pug/layout/_head.pug
+include ../../../pug/ui/_breadcrumbs.pug
+
+block scripts
+    script(type="module", src=`./src/windows/catalogNews/js/renderer.js`)
+
+
+block head
+  +head('AdamWeb', '')
+
+block content
+    main(class="p-4 bg-gray-200 dark:bg-black h-screen w-full overflow-hidden grid grid-cols-auto-1fr gap-12")
+      include ../../../pug/Components/_nav.pug
+      div(class="flex flex-col gap-4 h-[calc(100vh-2rem)]")
+        div(class="flex items-center gap-4 p-4 rounded-3xl min-h-16 w-full bg-black dark:bg-gray-200")
+          div(class="flex flex-wrap gap-2")
+            -
+              var items = [
+                {
+                  name: "Home",
+                  link: "index.html",
+                },
+                {
+                  name: "Новости",
+                  link: "catalogNews.html",
+                },
+              ]
+            +breadcrumbs(items)
+          button(screenShot="", type="button", class="px-2 py-1 rounded-xl dark:bg-black bg-white font-Manrope font-normal text-sm text-black dark:text-white hover:text-gray-300 ml-auto") Сделать снимок
+        div(ContentBody="", class="flex flex-col gap-4 p-4 rounded-3xl min-h-16 w-full bg-black dark:bg-gray-200 h-full")
+          div(class="flex flex-wrap items-center gap-4")
+            div(NavCatalog="", class="flex flex-wrap gap-2")
+            div(class="")
+          div(class="@container/page w-full h-full scrollbar scrollbar-light dark:scrollbar-dark overflow-y-auto overflow-x-hidden")
+            div(loadingCards="", class="flex flex-wrap gap-2")
+              div(class="")
+            div(ContentCards="", class="grid @lg/page:grid-cols-2 @[48rem]/page:grid-cols-4 @[90rem]/page:grid-cols-6 gap-4")
+              article(post="", class="flex flex-col gap-2 relative group bg-primary rounded-xl")
+                img(src="/src/assets/news/kaleidico-7lryofj0h9s-unsplash.jpg", alt="картинка", class="rounded-xl w-full h-36 object-cover")
+                div(class="px-2 pb-2")
+                  h2(class="font-Manrope font-semibold text-base text-white cursor-pointer text-center") Разработка Битрикс24
+                  p(class="font-Manrope font-semibold text-base text-white dark:text-black")
+                a(href="#", class="w-full h-full inset-0 absolute")
+              article(post="", class="flex flex-col gap-2 relative group bg-primary rounded-xl")
+                img(src="/src/assets/news/photo_5240473581819910424_y.jpg", alt="картинка", class="rounded-xl w-full h-36 object-cover")
+                div(class="px-2 pb-2")
+                  h2(class="font-Manrope font-semibold text-base text-white cursor-pointer text-center") Бронирование переговорных
+                  p(class="font-Manrope font-semibold text-base text-white dark:text-black ")
+                a(href="#", class="w-full h-full inset-0 absolute")
+              template(id="post_template")
+                article(post="", class="flex flex-col gap-2")
+                  img(src="", alt="картинка", class="rounded-xl w-full h-24 object-cover")
+                  h2(class="font-Manrope font-semibold text-base text-white dark:text-black")
+                  p(class="font-Manrope font-semibold text-base text-white dark:text-black")

@@ -1,0 +1,8 @@
+mixin newsCardCarusel(items)
+    each item in items 
+        div(newCardCarusel="", class="@container/newsCard")
+            div(class="w-full h-full relative group")
+                img(newCardCarusel="img", src=item.src, class="w-full h-full object-cover rounded-xl")
+                div(class="invisible group-hover:visible flex flex-col gap-2 absolute w-full h-full left-0 top-0 transition-all duration-200 ease-in-out p-4 overflow-hidden rounded-xl  before:w-full  before:h-full  before:content-['']  before:absolute  before:left-0  before:top-0  before:bg-white/20  before:blur-md")
+                    div(class="z-10 relative")
+                        a(href="#", class="font-Manrope font-semibold text-white text-xl") #{item.title}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="/src/assets/favicon.ico" type="image/x-icon"/>
+    <title>AdamWeb</title>
+    <meta name="description" content=""/>
+  </head>
+  <body class="w-screen h-screen">
+    <main class="p-4 bg-gray-200 dark:bg-black h-full w-full overflow-x-hidden grid grid-cols-auto-1fr gap-12">
+      <nav class="@container/nav w-20 min-w-16 h-[calc(100vh-2rem)] transition-width duration-200 ease-in-out">
+        <div class="flex flex-col bg-black dark:bg-gray-200 py-6 px-4 w-full h-full rounded-3xl gap-4">
+          <div class="relative flex items-end gap-2" NavItem="">
+            <svg class="w-12 h-12 shrink-0 fill-white dark:fill-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 18 18">
+              <g>
+                <polygon points="7.8,10.5 10.2,10.5 9,6.5  "></polygon>
+                <path d="M14,1H4C2.3,1,1,2.3,1,4v10c0,1.7,1.3,3,3,3h10c1.7,0,3-1.3,3-3V4C17,2.3,15.7,1,14,1z M11.5,14.7l-0.7-2.1H7.1l-0.7,2.1   H3.5L7.7,3.3h2.6l4.2,11.4H11.5z"></path>
+              </g>
+            </svg>
+            <p class="font-Manrope font-semibold text-[1.75rem] leading-9 text-white dark:text-black cursor-default hidden">AdamWeb</p>
+            <button class=" absolute grid place-items-center cursor-pointer z-10 top-0 -right-9 w-9 h-9 rounded-full bg-primary" type="button" ToggleNav="">
+              <svg class="fill-cyan-500 w-5 h-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.7074 16.7075L12.7074 26.7075C12.6145 26.8004 12.5042 26.8741 12.3828 26.9244C12.2614 26.9747 12.1313 27.0006 11.9999 27.0006C11.8686 27.0006 11.7384 26.9747 11.617 26.9244C11.4957 26.8741 11.3854 26.8004 11.2924 26.7075C11.1995 26.6146 11.1258 26.5043 11.0756 26.3829C11.0253 26.2615 10.9994 26.1314 10.9994 26C10.9994 25.8686 11.0253 25.7385 11.0756 25.6171C11.1258 25.4957 11.1995 25.3854 11.2924 25.2925L20.5862 16L11.2924 6.70751C11.1048 6.51987 10.9994 6.26537 10.9994 6.00001C10.9994 5.73464 11.1048 5.48015 11.2924 5.29251C11.4801 5.10487 11.7346 4.99945 11.9999 4.99945C12.2653 4.99945 12.5198 5.10487 12.7074 5.29251L22.7074 15.2925C22.8004 15.3854 22.8742 15.4957 22.9245 15.6171C22.9748 15.7385 23.0007 15.8686 23.0007 16C23.0007 16.1314 22.9748 16.2615 22.9245 16.3829C22.8742 16.5043 22.8004 16.6146 22.7074 16.7075Z" fill="#fff"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="relative flex items-center gap-3 group rounded-xl hover:bg-[#2B2B2F] transition-bg duration-200 ease-in-out min-h-[3.25] p-2 cursor-pointer" NavItem="">
+              <svg class="w-8 h-8 shrink-0 group-hover:fill-white fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 14C11 13.7348 11.1054 13.4804 11.2929 13.2929C11.4804 13.1054 11.7348 13 12 13H22C22.2652 13 22.5196 13.1054 22.7071 13.2929C22.8946 13.4804 23 13.7348 23 14C23 14.2652 22.8946 14.5196 22.7071 14.7071C22.5196 14.8946 22.2652 15 22 15H12C11.7348 15 11.4804 14.8946 11.2929 14.7071C11.1054 14.5196 11 14.2652 11 14ZM12 19H22C22.2652 19 22.5196 18.8946 22.7071 18.7071C22.8946 18.5196 23 18.2652 23 18C23 17.7348 22.8946 17.4804 22.7071 17.2929C22.5196 17.1054 22.2652 17 22 17H12C11.7348 17 11.4804 17.1054 11.2929 17.2929C11.1054 17.4804 11 17.7348 11 18C11 18.2652 11.1054 18.5196 11.2929 18.7071C11.4804 18.8946 11.7348 19 12 19ZM29 8V23C29 23.7956 28.6839 24.5587 28.1213 25.1213C27.5587 25.6839 26.7956 26 26 26H4C3.20673 26 2.44574 25.6858 1.88353 25.1262C1.32131 24.5665 1.00364 23.807 1 23.0138V11C1 10.7348 1.10536 10.4804 1.29289 10.2929C1.48043 10.1054 1.73478 10 2 10C2.26522 10 2.51957 10.1054 2.70711 10.2929C2.89464 10.4804 3 10.7348 3 11V23C3 23.2652 3.10536 23.5196 3.29289 23.7071C3.48043 23.8946 3.73478 24 4 24C4.26522 24 4.51957 23.8946 4.70711 23.7071C4.89464 23.5196 5 23.2652 5 23V8C5 7.46957 5.21071 6.96086 5.58579 6.58579C5.96086 6.21071 6.46957 6 7 6H27C27.5304 6 28.0391 6.21071 28.4142 6.58579C28.7893 6.96086 29 7.46957 29 8ZM27 8H7V23C7.0005 23.3407 6.94257 23.6789 6.82875 24H26C26.2652 24 26.5196 23.8946 26.7071 23.7071C26.8946 23.5196 27 23.2652 27 23V8Z"></path>
+              </svg>
+              <p class="font-Manrope font-semibold text-xl leading-7 group-hover:text-white  text-white dark:text-black cursor-pointer hidden text-nowrap">Новости</p><a class=" inset-0 w-full h-full absolute" href="catalogNews.html"></a>
+            </div>
+            <div class="relative flex items-center gap-3 group rounded-xl hover:bg-[#2B2B2F] transition-bg duration-200 ease-in-out min-h-[3.25] p-2 cursor-pointer" NavItem="">
+              <svg class="w-8 h-8 shrink-0 group-hover:fill-white fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.9363 6.57875C13.7014 6.3445 13.4113 6.17318 13.0928 6.0806C12.7742 5.98802 12.4375 5.97716 12.1137 6.04903C11.7898 6.12089 11.4893 6.27317 11.2398 6.49181C10.9904 6.71044 10.8 6.98839 10.6863 7.3L4.125 25.3475C4.01722 25.6451 3.9824 25.9642 4.02348 26.2781C4.06455 26.5919 4.18032 26.8914 4.36107 27.1512C4.54181 27.4111 4.78225 27.6238 5.06222 27.7715C5.34218 27.9191 5.65348 27.9975 5.97 28C6.20305 27.9984 6.43402 27.9561 6.6525 27.875L24.6988 21.3125C25.0105 21.1989 25.2885 21.0086 25.5073 20.7592C25.7261 20.5098 25.8785 20.2093 25.9505 19.8855C26.0225 19.5616 26.0117 19.2248 25.9192 18.9062C25.8267 18.5876 25.6555 18.2975 25.4213 18.0625L13.9363 6.57875ZM12.895 23.48L8.52 19.105L10.165 14.5787L17.4213 21.835L12.895 23.48ZM6.02 25.98L7.77 21.1787L10.8263 24.235L6.02 25.98ZM19.5 21.08L10.92 12.5L12.545 8.01625L23.9738 19.445L19.5 21.08ZM20 9C20.0188 8.32396 20.1825 7.65983 20.48 7.0525C21.1425 5.72875 22.3925 5 24 5C24.8375 5 25.375 4.71375 25.7063 4.09875C25.8807 3.75468 25.9808 3.37777 26 2.9925C26.001 2.72728 26.1073 2.47332 26.2955 2.28649C26.4838 2.09966 26.7385 1.99526 27.0038 1.99625C27.269 1.99724 27.5229 2.10356 27.7098 2.29179C27.8966 2.48003 28.001 2.73478 28 3C28 4.6075 26.935 7 24 7C23.1625 7 22.625 7.28625 22.2938 7.90125C22.1193 8.24532 22.0192 8.62223 22 9.0075C21.9995 9.13882 21.9732 9.26876 21.9224 9.3899C21.8717 9.51103 21.7977 9.621 21.7045 9.71351C21.6112 9.80602 21.5007 9.87926 21.3792 9.92906C21.2577 9.97886 21.1276 10.0042 20.9963 10.0037C20.8649 10.0033 20.735 9.9769 20.6139 9.92619C20.4927 9.87548 20.3828 9.80141 20.2902 9.70821C20.1977 9.615 20.1245 9.50448 20.0747 9.38297C20.0249 9.26145 19.9995 9.13132 20 9ZM17 5V2C17 1.73478 17.1054 1.48043 17.2929 1.29289C17.4804 1.10536 17.7348 1 18 1C18.2652 1 18.5196 1.10536 18.7071 1.29289C18.8946 1.48043 19 1.73478 19 2V5C19 5.26522 18.8946 5.51957 18.7071 5.70711C18.5196 5.89464 18.2652 6 18 6C17.7348 6 17.4804 5.89464 17.2929 5.70711C17.1054 5.51957 17 5.26522 17 5ZM29.7075 15.2925C29.8003 15.3854 29.8739 15.4957 29.9242 15.6171C29.9744 15.7384 30.0002 15.8685 30.0001 15.9998C30.0001 16.1312 29.9741 16.2612 29.9238 16.3825C29.8735 16.5038 29.7998 16.614 29.7069 16.7069C29.614 16.7997 29.5037 16.8733 29.3823 16.9235C29.261 16.9737 29.1309 16.9995 28.9996 16.9995C28.8682 16.9994 28.7382 16.9735 28.6169 16.9232C28.4956 16.8729 28.3853 16.7992 28.2925 16.7062L26.2925 14.7063C26.1049 14.5186 25.9994 14.2641 25.9994 13.9987C25.9994 13.7334 26.1049 13.4789 26.2925 13.2913C26.4801 13.1036 26.7346 12.9982 27 12.9982C27.2654 12.9982 27.5199 13.1036 27.7075 13.2913L29.7075 15.2925ZM30.3163 9.94875L27.3163 10.9487C27.0646 11.0326 26.79 11.0131 26.5528 10.8945C26.3155 10.7759 26.1351 10.5679 26.0513 10.3162C25.9674 10.0646 25.9869 9.78999 26.1055 9.55276C26.2241 9.31552 26.4321 9.13513 26.6838 9.05125L29.6838 8.05125C29.9354 7.96738 30.21 7.98689 30.4472 8.10551C30.6845 8.22413 30.8649 8.43213 30.9488 8.68375C31.0326 8.93537 31.0131 9.21001 30.8945 9.44724C30.7759 9.68448 30.5679 9.86487 30.3163 9.94875Z"></path>
+              </svg>
+              <p class="font-Manrope font-semibold text-xl leading-7 group-hover:text-white  text-white dark:text-black cursor-pointer hidden text-nowrap">Дни рождения</p><a class=" inset-0 w-full h-full absolute" href="birthdays.html"></a>
+            </div>
+            <div class="relative flex items-center gap-3 group rounded-xl hover:bg-[#2B2B2F] transition-bg duration-200 ease-in-out min-h-[3.25] p-2 cursor-pointer" NavItem="">
+              <svg class="w-8 h-8 shrink-0 group-hover:fill-white fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 19C21 19.2652 20.8946 19.5196 20.7071 19.7071C20.5196 19.8946 20.2652 20 20 20H12C11.7348 20 11.4804 19.8946 11.2929 19.7071C11.1054 19.5196 11 19.2652 11 19C11 18.7348 11.1054 18.4804 11.2929 18.2929C11.4804 18.1054 11.7348 18 12 18H20C20.2652 18 20.5196 18.1054 20.7071 18.2929C20.8946 18.4804 21 18.7348 21 19ZM20 14H12C11.7348 14 11.4804 14.1054 11.2929 14.2929C11.1054 14.4804 11 14.7348 11 15C11 15.2652 11.1054 15.5196 11.2929 15.7071C11.4804 15.8946 11.7348 16 12 16H20C20.2652 16 20.5196 15.8946 20.7071 15.7071C20.8946 15.5196 21 15.2652 21 15C21 14.7348 20.8946 14.4804 20.7071 14.2929C20.5196 14.1054 20.2652 14 20 14ZM27 6V27C27 27.5304 26.7893 28.0391 26.4142 28.4142C26.0391 28.7893 25.5304 29 25 29H7C6.46957 29 5.96086 28.7893 5.58579 28.4142C5.21071 28.0391 5 27.5304 5 27V6C5 5.46957 5.21071 4.96086 5.58579 4.58579C5.96086 4.21072 6.46957 4 7 4H11.5325C12.0944 3.37091 12.7828 2.86757 13.5527 2.52295C14.3225 2.17833 15.1565 2.00018 16 2.00018C16.8435 2.00018 17.6775 2.17833 18.4473 2.52295C19.2172 2.86757 19.9056 3.37091 20.4675 4H25C25.5304 4 26.0391 4.21072 26.4142 4.58579C26.7893 4.96086 27 5.46957 27 6ZM12 8H20C20 6.93914 19.5786 5.92172 18.8284 5.17157C18.0783 4.42143 17.0609 4 16 4C14.9391 4 13.9217 4.42143 13.1716 5.17157C12.4214 5.92172 12 6.93914 12 8ZM25 6H21.6562C21.8837 6.64227 22 7.31864 22 8V9C22 9.26522 21.8946 9.51957 21.7071 9.70711C21.5196 9.89464 21.2652 10 21 10H11C10.7348 10 10.4804 9.89464 10.2929 9.70711C10.1054 9.51957 10 9.26522 10 9V8C10 7.31864 10.1163 6.64227 10.3438 6H7V27H25V6Z"></path>
+              </svg>
+              <p class="font-Manrope font-semibold text-xl leading-7 group-hover:text-white  text-white dark:text-black cursor-pointer hidden text-nowrap">Опросы</p><a class=" inset-0 w-full h-full absolute" href="polls.html"></a>
+            </div>
+            <div class="relative flex items-center gap-3 group rounded-xl hover:bg-[#2B2B2F] transition-bg duration-200 ease-in-out min-h-[3.25] p-2 cursor-pointer" NavItem="">
+              <svg class="w-8 h-8 shrink-0 group-hover:fill-white fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.7075 8.2925L21.7075 3.2925C21.6146 3.19967 21.5042 3.12605 21.3829 3.07586C21.2615 3.02568 21.1314 2.9999 21 3H11C10.4696 3 9.96086 3.21071 9.58579 3.58579C9.21071 3.96086 9 4.46957 9 5V7H7C6.46957 7 5.96086 7.21071 5.58579 7.58579C5.21071 7.96086 5 8.46957 5 9V27C5 27.5304 5.21071 28.0391 5.58579 28.4142C5.96086 28.7893 6.46957 29 7 29H21C21.5304 29 22.0391 28.7893 22.4142 28.4142C22.7893 28.0391 23 27.5304 23 27V25H25C25.5304 25 26.0391 24.7893 26.4142 24.4142C26.7893 24.0391 27 23.5304 27 23V9C27.0001 8.86864 26.9743 8.73855 26.9241 8.61715C26.8739 8.49576 26.8003 8.38544 26.7075 8.2925ZM21 27H7V9H16.5863L21 13.4137V23.98C21 23.9875 21 23.9937 21 24C21 24.0063 21 24.0125 21 24.02V27ZM25 23H23V13C23.0001 12.8686 22.9743 12.7385 22.9241 12.6172C22.8739 12.4958 22.8003 12.3854 22.7075 12.2925L17.7075 7.2925C17.6146 7.19967 17.5042 7.12605 17.3829 7.07586C17.2615 7.02568 17.1314 6.9999 17 7H11V5H20.5863L25 9.41375V23ZM18 19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20H11C10.7348 20 10.4804 19.8946 10.2929 19.7071C10.1054 19.5196 10 19.2652 10 19C10 18.7348 10.1054 18.4804 10.2929 18.2929C10.4804 18.1054 10.7348 18 11 18H17C17.2652 18 17.5196 18.1054 17.7071 18.2929C17.8946 18.4804 18 18.7348 18 19ZM18 23C18 23.2652 17.8946 23.5196 17.7071 23.7071C17.5196 23.8946 17.2652 24 17 24H11C10.7348 24 10.4804 23.8946 10.2929 23.7071C10.1054 23.5196 10 23.2652 10 23C10 22.7348 10.1054 22.4804 10.2929 22.2929C10.4804 22.1054 10.7348 22 11 22H17C17.2652 22 17.5196 22.1054 17.7071 22.2929C17.8946 22.4804 18 22.7348 18 23Z"></path>
+              </svg>
+              <p class="font-Manrope font-semibold text-xl leading-7 group-hover:text-white  text-white dark:text-black cursor-pointer hidden text-nowrap">
+                 Документо-<br>оборот</p><a class=" inset-0 w-full h-full absolute" href="dokumentooborot.html"></a>
+            </div>
+            <div class="relative flex items-center gap-3 group rounded-xl hover:bg-[#2B2B2F] transition-bg duration-200 ease-in-out min-h-[3.25] p-2 cursor-pointer" NavItem="">
+              <svg class="w-8 h-8 shrink-0 group-hover:fill-white fill-white dark:fill-black anhore-notification" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.725 21.9925C27.0313 20.7975 26 17.4163 26 13C26 10.3478 24.9464 7.8043 23.0711 5.92893C21.1957 4.05357 18.6522 3 16 3C13.3479 3 10.8043 4.05357 8.92895 5.92893C7.05358 7.8043 6.00002 10.3478 6.00002 13C6.00002 17.4175 4.96752 20.7975 4.27377 21.9925C4.0966 22.2963 4.00268 22.6415 4.00148 22.9931C4.00027 23.3448 4.09182 23.6906 4.26689 23.9956C4.44196 24.3006 4.69437 24.5541 4.99865 24.7304C5.30293 24.9068 5.64833 24.9997 6.00002 25H11.1013C11.332 26.1289 11.9455 27.1436 12.8382 27.8722C13.7308 28.6009 14.8477 28.9989 16 28.9989C17.1523 28.9989 18.2692 28.6009 19.1618 27.8722C20.0545 27.1436 20.6681 26.1289 20.8988 25H26C26.3516 24.9995 26.6968 24.9064 27.0009 24.73C27.3051 24.5535 27.5573 24.3 27.7322 23.9951C27.9071 23.6901 27.9986 23.3444 27.9973 22.9928C27.996 22.6412 27.9021 22.2962 27.725 21.9925ZM16 27C15.3798 26.9998 14.7749 26.8074 14.2685 26.4492C13.7622 26.0911 13.3793 25.5848 13.1725 25H18.8275C18.6208 25.5848 18.2379 26.0911 17.7315 26.4492C17.2252 26.8074 16.6202 26.9998 16 27ZM6.00002 23C6.96252 21.345 8.00002 17.51 8.00002 13C8.00002 10.8783 8.84287 8.84344 10.3432 7.34315C11.8435 5.84285 13.8783 5 16 5C18.1217 5 20.1566 5.84285 21.6569 7.34315C23.1572 8.84344 24 10.8783 24 13C24 17.5063 25.035 21.3412 26 23H6.00002Z"></path>
+              </svg>
+              <p class="font-Manrope font-semibold text-xl leading-7 group-hover:text-white  text-white dark:text-black cursor-pointer hidden text-nowrap">Уведомления</p>
+              <div class="absolute w-4 h-4 bg-red-600 rounded-full right-0 top-0 flex justify-center items-center position-anchor-notification ">
+                <p class="font-Manrope font-semibold text-xs text-white">1</p>
+              </div><a class=" inset-0 w-full h-full absolute" href="notifications.html"></a>
+            </div>
+            <div class=" hidden" ToggleMode="">
+              <label class="w-[3.25rem] h-7 rounded-full bg-gray-200 shadow-inner cursor-pointer relative flex items-center transition duration-500 ease-in-out px-1" for="toggle-dark-mode">
+                <input class="hidden peer" id="toggle-dark-mode" type="checkbox">
+                <div class="peer-checked:translate-x-full absolute w-5 h-5 rounded-full bg-white dark:bg-black shadow-lg transition-transform duration-500 ease-in-out flex items-center justify-center overflow-hidden transform translate-x-0"></div>
+                <svg class="peer-checked:opacity-100 w-4 h-4 text-yellow-400 transition-opacity duration-500 ease-in-out opacity-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"></path>
+                </svg>
+                <svg class="peer-checked:opacity-0 w-4 h-4 text-white fill-black transition-opacity duration-500 ease-in-out absolute right-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 overflow-x-hidden min-h-10 mt-auto" userCard="">
+            <div class="relative flex shrink-0 group"><img class="w-12 h-12 object-cover cursor-pointer rounded-full border-2 border-transparent transition-all duration-200 ease-in-out group-hover:border-blue-400" userPhoto="" src="./src/assets/user/profile.png" alt="фото сотрудника">
+              <div class="w-3 h-3 absolute top-0 right-0 rounded-full bg-green-400" userStatus=""></div><a class="w-full h-full inset-0 absolute cursor-pointer" href="userCards.html"></a>
+            </div>
+            <div class="flex-col gap-1 whitespace-nowrap hidden" userBlock="">
+              <p class="font-Manrope font-semibold text-base leading-[1] text-left text-white dark:text-black" userName="">Иванов Иван</p>
+              <p class="font-Manrope font-semibold text-sm text-left text-white dark:text-black" userEmail="">email@ya.ru</p>
+            </div><a class="ml-auto hidden cursor-pointer" logout="" href="authorization.html">
+              <svg class="w-6 h-6 fill-red-500" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 27C14 27.2652 13.8946 27.5196 13.7071 27.7071C13.5196 27.8946 13.2652 28 13 28H6C5.46957 28 4.96086 27.7893 4.58579 27.4142C4.21071 27.0391 4 26.5304 4 26V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H13C13.2652 4 13.5196 4.10536 13.7071 4.29289C13.8946 4.48043 14 4.73478 14 5C14 5.26522 13.8946 5.51957 13.7071 5.70711C13.5196 5.89464 13.2652 6 13 6H6V26H13C13.2652 26 13.5196 26.1054 13.7071 26.2929C13.8946 26.4804 14 26.7348 14 27ZM27.7075 15.2925L22.7075 10.2925C22.5199 10.1049 22.2654 9.99944 22 9.99944C21.7346 9.99944 21.4801 10.1049 21.2925 10.2925C21.1049 10.4801 20.9994 10.7346 20.9994 11C20.9994 11.2654 21.1049 11.5199 21.2925 11.7075L24.5863 15H13C12.7348 15 12.4804 15.1054 12.2929 15.2929C12.1054 15.4804 12 15.7348 12 16C12 16.2652 12.1054 16.5196 12.2929 16.7071C12.4804 16.8946 12.7348 17 13 17H24.5863L21.2925 20.2925C21.1049 20.4801 20.9994 20.7346 20.9994 21C20.9994 21.2654 21.1049 21.5199 21.2925 21.7075C21.4801 21.8951 21.7346 22.0006 22 22.0006C22.2654 22.0006 22.5199 21.8951 22.7075 21.7075L27.7075 16.7075C27.8005 16.6146 27.8742 16.5043 27.9246 16.3829C27.9749 16.2615 28.0008 16.1314 28.0008 16C28.0008 15.8686 27.9749 15.7385 27.9246 15.6171C27.8742 15.4957 27.8005 15.3854 27.7075 15.2925Z"></path>
+              </svg></a>
+          </div>
+        </div>
+      </nav>
+      <div class="grid grid-cols-12 grid-rows-12 gap-6 h-[calc(100vh-2rem)]">
+        <div class="backdrop-blur-md border border-black dark:border-bg-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-1 col-end-7 row-start-1 row-end-7 p-6 overflow-hidden">
+          <div class="swiffy-slider w-full h-full slider-nav-visible slider-nav-sm">
+            <div class="slider-container">
+              <div class="@container/newsCard" newCardCarusel="">
+                <div class="w-full h-full relative group"><img class="w-full h-full object-cover rounded-xl" newCardCarusel="img" src="/src/assets/news/kaleidico-7lryofj0h9s-unsplash.jpg"/>
+                  <div class="invisible group-hover:visible flex flex-col gap-2 absolute w-full h-full left-0 top-0 transition-all duration-200 ease-in-out p-4 overflow-hidden rounded-xl  before:w-full  before:h-full  before:content-['']  before:absolute  before:left-0  before:top-0  before:bg-white/20  before:blur-md">
+                    <div class="z-10 relative"><a class="font-Manrope font-semibold text-white text-xl" href="#">Разработка Битрикс24</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="@container/newsCard" newCardCarusel="">
+                <div class="w-full h-full relative group"><img class="w-full h-full object-cover rounded-xl" newCardCarusel="img" src="/src/assets/news/photo_5240473581819910424_y.jpg"/>
+                  <div class="invisible group-hover:visible flex flex-col gap-2 absolute w-full h-full left-0 top-0 transition-all duration-200 ease-in-out p-4 overflow-hidden rounded-xl  before:w-full  before:h-full  before:content-['']  before:absolute  before:left-0  before:top-0  before:bg-white/20  before:blur-md">
+                    <div class="z-10 relative"><a class="font-Manrope font-semibold text-white text-xl" href="#">Бронирование переговорных</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="slider-nav !filter-none !p-0" type="button"> 
+              <svg class="w-12 h-12 fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.7076 25.2925C20.8005 25.3854 20.8742 25.4957 20.9244 25.6171C20.9747 25.7385 21.0006 25.8686 21.0006 26C21.0006 26.1314 20.9747 26.2615 20.9244 26.3829C20.8742 26.5043 20.8005 26.6146 20.7076 26.7075C20.6146 26.8004 20.5043 26.8741 20.383 26.9244C20.2616 26.9747 20.1314 27.0006 20.0001 27.0006C19.8687 27.0006 19.7386 26.9747 19.6172 26.9244C19.4958 26.8741 19.3855 26.8004 19.2926 26.7075L9.29255 16.7075C9.19958 16.6146 9.12582 16.5043 9.07549 16.3829C9.02517 16.2615 8.99927 16.1314 8.99927 16C8.99927 15.8686 9.02517 15.7385 9.07549 15.6171C9.12582 15.4957 9.19958 15.3854 9.29255 15.2925L19.2926 5.29251C19.4802 5.10487 19.7347 4.99945 20.0001 4.99945C20.2654 4.99945 20.5199 5.10487 20.7076 5.29251C20.8952 5.48015 21.0006 5.73464 21.0006 6.00001C21.0006 6.26537 20.8952 6.51987 20.7076 6.70751L11.4138 16L20.7076 25.2925Z"></path>
+              </svg>
+            </button>
+            <button class="slider-nav slider-nav-next !filter-none !p-0" type="button">
+              <svg class="w-12 h-12 fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.7074 16.7075L12.7074 26.7075C12.6145 26.8004 12.5042 26.8741 12.3828 26.9244C12.2614 26.9747 12.1313 27.0006 11.9999 27.0006C11.8686 27.0006 11.7384 26.9747 11.617 26.9244C11.4957 26.8741 11.3854 26.8004 11.2924 26.7075C11.1995 26.6146 11.1258 26.5043 11.0756 26.3829C11.0253 26.2615 10.9994 26.1314 10.9994 26C10.9994 25.8686 11.0253 25.7385 11.0756 25.6171C11.1258 25.4957 11.1995 25.3854 11.2924 25.2925L20.5862 16L11.2924 6.70751C11.1048 6.51987 10.9994 6.26537 10.9994 6.00001C10.9994 5.73464 11.1048 5.48015 11.2924 5.29251C11.4801 5.10487 11.7346 4.99945 11.9999 4.99945C12.2653 4.99945 12.5198 5.10487 12.7074 5.29251L22.7074 15.2925C22.8004 15.3854 22.8742 15.4957 22.9245 15.6171C22.9748 15.7385 23.0007 15.8686 23.0007 16C23.0007 16.1314 22.9748 16.2615 22.9245 16.3829C22.8742 16.5043 22.8004 16.6146 22.7074 16.7075Z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-7 col-end-11 row-start-1 row-end-7 p-6 flex flex-col gap-4 overflow-hidden">
+          <p class="font-Manrope font-semibold text-white dark:text-black text-xl">Задачи</p>
+          <div class="flex flex-col gap-4 scrollbar scrollbar-light dark:scrollbar-dark overflow-y-auto overflow-x-hidden" tasks=""></div>
+        </div>
+        <div class="@container/weather backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-11 col-end-13 row-start-1 row-end-3 p-6 flex flex-col gap-2 overflow-hidden" weatherWidget="">
+          <p class="font-Manrope font-semibold text-white dark:text-black text-xl" weatherWidget="city"></p>
+          <div class="flex flex-col gap-4 @[4rem]/weather:grid @[4rem]/weather:grid-cols-auto-1fr w-full"><img class="h-16 object-contain w-16 aspect-1-1 filter-white dark:filter-black" weatherWidget="icon" src="/src/assets/weather/CloudSnow.svg" alt="иконка">
+            <div class="flex flex-col justify-center">
+              <p class="font-Manrope font-semibold text-3xl dark:text-black text-white" weatherWidget="temp"></p>
+              <p class="font-Manrope font-semibold text-base dark:text-black text-white" weatherWidget="title"></p>
+            </div>
+          </div>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-11 col-end-13 row-start-3 row-end-7 p-6 flex flex-col gap-4 overflow-hidden">
+          <p class="font-Manrope font-semibold text-white dark:text-black text-xl">Валюта</p>
+          <div class="flex flex-col gap-4" currencyWidget=""></div>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-10 col-end-13 row-start-7 row-end-13 p-6 flex flex-col gap-4 overflow-hidden">
+          <p class="font-Manrope font-semibold text-white dark:text-black text-xl">Дни рождения</p>
+          <div class="flex flex-col gap-2 scrollbar scrollbar-light dark:scrollbar-dark overflow-y-auto overflow-x-hidden">
+            <div class="@container/employeeCard" employeeCard="">
+              <div class="grid grid-cols-auto-1fr items-center gap-2">
+                <div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="./src/assets/user/profile.png" alt="картинка"/></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-wrap gap-2 justify-between w-full"><a class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer" href="#">Julia Wolfe</a>
+                    <p class="font-Manrope font-normal text-sm text-white dark:text-black">12 августа</p>
+                  </div>
+                  <p class="font-Manrope font-normal text-sm text-white dark:text-black">Отдел логистики</p>
+                </div>
+              </div>
+            </div>
+            <div class="@container/employeeCard" employeeCard="">
+              <div class="grid grid-cols-auto-1fr items-center gap-2">
+                <div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="./src/assets/user/Avatar_1.png" alt="картинка"/></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-wrap gap-2 justify-between w-full"><a class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer" href="#">Zachary McGee</a>
+                    <p class="font-Manrope font-normal text-sm text-white dark:text-black">12 августа</p>
+                  </div>
+                  <p class="font-Manrope font-normal text-sm text-white dark:text-black">Отдел закупок</p>
+                </div>
+              </div>
+            </div>
+            <div class="@container/employeeCard" employeeCard="">
+              <div class="grid grid-cols-auto-1fr items-center gap-2">
+                <div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="./src/assets/user/profile.png" alt="картинка"/></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-wrap gap-2 justify-between w-full"><a class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer" href="#">Phoebe Wells</a>
+                    <p class="font-Manrope font-normal text-sm text-white dark:text-black">12 августа</p>
+                  </div>
+                  <p class="font-Manrope font-normal text-sm text-white dark:text-black">PR - служба</p>
+                </div>
+              </div>
+            </div>
+            <div class="@container/employeeCard" employeeCard="">
+              <div class="grid grid-cols-auto-1fr items-center gap-2">
+                <div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="./src/assets/user/Avatar_1.png" alt="картинка"/></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-wrap gap-2 justify-between w-full"><a class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer" href="#">Brian Davis</a>
+                    <p class="font-Manrope font-normal text-sm text-white dark:text-black">12 августа</p>
+                  </div>
+                  <p class="font-Manrope font-normal text-sm text-white dark:text-black">PR - служба</p>
+                </div>
+              </div>
+            </div>
+            <div class="@container/employeeCard" employeeCard="">
+              <div class="grid grid-cols-auto-1fr items-center gap-2">
+                <div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="./src/assets/user/profile.png" alt="картинка"/></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-wrap gap-2 justify-between w-full"><a class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer" href="#">Gilbert Larson</a>
+                    <p class="font-Manrope font-normal text-sm text-white dark:text-black">12 августа</p>
+                  </div>
+                  <p class="font-Manrope font-normal text-sm text-white dark:text-black">PR - служба</p>
+                </div>
+              </div>
+            </div>
+            <div class="@container/employeeCard" employeeCard="">
+              <div class="grid grid-cols-auto-1fr items-center gap-2">
+                <div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="./src/assets/user/Avatar_1.png" alt="картинка"/></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-wrap gap-2 justify-between w-full"><a class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer" href="#">Gavin Robinson</a>
+                    <p class="font-Manrope font-normal text-sm text-white dark:text-black">12 августа</p>
+                  </div>
+                  <p class="font-Manrope font-normal text-sm text-white dark:text-black">PR - служба</p>
+                </div>
+              </div>
+            </div>
+          </div><a class="font-Manrope font-normal text-white dark:text-black text-base mt-auto hover:text-primary" href="#">Показать все</a>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-7 col-end-10 row-start-7 row-end-13 p-6 flex flex-col gap-4 overflow-hidden" tabBlock="">
+          <div class="flex flex-wrap items-center gap-2 justify-between">
+            <p class="font-Manrope font-semibold text-white dark:text-black text-xl">Календарь событий</p>
+            <div class="flex flex-wrap gap-2">
+              <p class="font-Manrope font-semibold text-base text-white dark:text-black  cursor-pointer hover:text-primary" tab="2" data-tab-status="false">Прошедшие</p>
+              <p class="font-Manrope font-semibold text-base text-white dark:text-black border-b-2 border-primary outline-offset-2 cursor-pointer hover:text-primary" tab="1" data-tab-status="true">Предстоящие</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 scrollbar scrollbar-light dark:scrollbar-dark overflow-y-auto overflow-x-hidden" tabContent="1">
+            <div class="@container/eventCard group flex flex-col gap-2 cursor-pointer" eventCard="">
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">26 ОКТЯБРЯ</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-lg group-hover:text-primary">Школа искусств приглашает всех желающих</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">19:00 — 21:00</p><a class=" inset-0 w-full h-full" href="#"></a>
+            </div>
+            <div class="@container/eventCard group flex flex-col gap-2 cursor-pointer" eventCard="">
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">26 - 28 ОКТЯБРЯ</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-lg group-hover:text-primary">Оптимезация сервисов согласования и постановки на учет распределенных решений</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">19:00 — 21:00</p><a class=" inset-0 w-full h-full" href="#"></a>
+            </div>
+            <div class="@container/eventCard group flex flex-col gap-2 cursor-pointer" eventCard="">
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">26 ОКТЯБРЯ</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-lg group-hover:text-primary">Оптимезация сервисов согласования и постановки на учет распределенных решений</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">19:00 — 21:00</p><a class=" inset-0 w-full h-full" href="#"></a>
+            </div>
+          </div>
+          <div class="hidden flex-col gap-4 scrollbar scrollbar-light dark:scrollbar-dark overflow-y-auto overflow-x-hidden" tabContent="2">
+            <div class="@container/eventCard group flex flex-col gap-2 cursor-pointer" eventCard="">
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">30 ОКТЯБРЯ</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-lg group-hover:text-primary">Оптимезация сервисов согласования и постановки на учет распределенных решений</p>
+              <p class="font-Manrope font-semibold text-white dark:text-black text-sm">19:00 — 21:00</p><a class=" inset-0 w-full h-full" href="#"></a>
+            </div>
+          </div>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-1 col-end-4 row-start-7 row-end-10 p-6 overflow-hidden flex flex-col gap-4">
+          <p class="font-Manrope font-semibold text-white dark:text-black text-xl">Запуск приложений</p>
+          <diV class="flex flex-wrap gap-4">
+            <div class="w-8 h-8 rounded-full p-2 bg-blue-500 flex justify-center items-center cursor-pointer relative">
+              <svg class="w-full h-full fill-white" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.61 3.27375C29.455 3.13996 29.2665 3.05098 29.0647 3.0164C28.863 2.98182 28.6556 3.00294 28.465 3.0775L3.13245 12.9912C2.77343 13.1309 2.46948 13.3833 2.26636 13.7106C2.06323 14.0379 1.97193 14.4223 2.00619 14.806C2.04046 15.1897 2.19844 15.5519 2.45634 15.838C2.71425 16.1241 3.05812 16.3187 3.4362 16.3925L9.99995 17.6812V25C9.99866 25.3986 10.1171 25.7885 10.34 26.119C10.5629 26.4495 10.8799 26.7055 11.2499 26.8538C11.6194 27.0046 12.0258 27.0408 12.4161 26.9577C12.8065 26.8745 13.1628 26.6759 13.4387 26.3875L16.6037 23.105L21.625 27.5C21.9872 27.8213 22.4545 27.9992 22.9387 28C23.1509 27.9998 23.3618 27.9665 23.5637 27.9013C23.8936 27.7966 24.1904 27.6073 24.4244 27.3522C24.6584 27.0971 24.8215 26.7852 24.8974 26.4475L29.9712 4.375C30.0166 4.17594 30.0069 3.96827 29.9433 3.77427C29.8797 3.58027 29.7644 3.40725 29.61 3.27375ZM21.9675 7.77375L10.7687 15.7937L4.5687 14.5775L21.9675 7.77375ZM11.9999 25V19.065L15.0987 21.7825L11.9999 25ZM22.9412 26L12.6062 16.9375L27.4812 6.27625L22.9412 26Z"></path>
+              </svg><a class="inset-0 w-full h-full absolute" href="tg://resolve?domain=adamwebbot&amp;appname=AdamWebDemo&amp;mode=compact"></a>
+            </div>
+            <div class="w-8 h-8 flex justify-center items-center cursor-pointer relative">
+              <svg class="fill-white dark:fill-black" width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1">
+                <g class="layer">
+                  <path d="m16.31,24.33c-2.86,0 -5.85,-1.43 -7.07,-3.41c-0.37,-0.62 -0.18,-1.43 0.43,-1.8s1.4,-0.19 1.77,0.43c0.85,1.43 3.41,2.42 5.54,2.17c0.97,-0.12 2.25,-0.56 2.8,-1.92c0.12,-0.37 0.24,-0.87 0.06,-1.12c-0.43,-0.74 -2.38,-1.12 -3.96,-1.43c-2.92,-0.56 -6.52,-1.24 -6.82,-4.65c-0.18,-2.23 1.1,-3.97 3.41,-4.77c3.96,-1.3 8.71,0.43 10.11,2.79c0.37,0.62 0.18,1.43 -0.43,1.8s-1.4,0.19 -1.77,-0.43c-0.91,-1.55 -4.75,-2.42 -7.13,-1.61c-1.77,0.56 -1.71,1.67 -1.64,2.11c0.12,1.3 1.95,1.8 4.75,2.29c2.44,0.5 4.75,0.93 5.73,2.67c0.49,0.93 0.55,2.05 0.12,3.29c-0.73,2.05 -2.5,3.35 -4.87,3.66c-0.43,-0.06 -0.79,-0.06 -1.04,-0.06zm6.95,6.33c-1.1,0 -2.19,-0.19 -3.17,-0.62c-1.4,0.43 -2.8,0.62 -4.26,0.62c-7.92,0 -14.44,-6.64 -14.44,-14.82c0,-0.5 0,-0.99 0.06,-1.49c-0.91,-1.43 -1.4,-3.04 -1.4,-4.71c0,-4.71 3.78,-8.56 8.41,-8.56c1.1,0 2.19,0.19 3.17,0.62c1.4,-0.43 2.8,-0.62 4.26,-0.62c7.98,0 14.56,6.64 14.56,14.82c0,0.5 0,0.99 -0.06,1.49c0.91,1.43 1.4,3.04 1.4,4.71c-0.06,4.65 -3.78,8.56 -8.53,8.56zm-3.17,-3.35c0.18,0 0.37,0.06 0.55,0.12c0.79,0.37 1.64,0.62 2.56,0.62c3.23,0 5.85,-2.67 5.85,-5.95c0,-1.3 -0.43,-2.54 -1.22,-3.6c-0.18,-0.25 -0.3,-0.62 -0.24,-0.93c0.06,-0.56 0.12,-1.12 0.12,-1.67c0,-6.7 -5.36,-12.22 -12,-12.22c-1.34,0 -2.62,0.25 -3.9,0.68c-0.3,0.12 -0.67,0.06 -0.97,-0.06c-0.79,-0.37 -1.64,-0.62 -2.56,-0.62c-3.23,0 -5.85,2.67 -5.85,5.95c0,1.3 0.43,2.54 1.22,3.6c0.18,0.25 0.3,0.62 0.24,0.93c-0.06,0.56 -0.12,1.12 -0.12,1.67c0,6.7 5.36,12.22 12,12.22c1.34,0 2.62,-0.25 3.9,-0.68c0.3,-0.06 0.43,-0.06 0.43,-0.06z" id="svg_1"></path>
+                </g>
+              </svg><a class="inset-0 w-full h-full absolute" href="skype:nlgame?chat"></a>
+            </div>
+            <div class="w-8 h-8 flex justify-center items-center cursor-pointer relative" calculatorOpen="">
+              <svg class="fill-white dark:fill-black" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 15H22C22.2652 15 22.5196 14.8946 22.7071 14.7071C22.8946 14.5196 23 14.2652 23 14V8C23 7.73478 22.8946 7.48043 22.7071 7.29289C22.5196 7.10536 22.2652 7 22 7H10C9.73478 7 9.48043 7.10536 9.29289 7.29289C9.10536 7.48043 9 7.73478 9 8V14C9 14.2652 9.10536 14.5196 9.29289 14.7071C9.48043 14.8946 9.73478 15 10 15ZM11 9H21V13H11V9ZM25 3H7C6.46957 3 5.96086 3.21071 5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5V27C5 27.5304 5.21071 28.0391 5.58579 28.4142C5.96086 28.7893 6.46957 29 7 29H25C25.5304 29 26.0391 28.7893 26.4142 28.4142C26.7893 28.0391 27 27.5304 27 27V5C27 4.46957 26.7893 3.96086 26.4142 3.58579C26.0391 3.21071 25.5304 3 25 3ZM25 27H7V5H25V27ZM12.5 18.5C12.5 18.7967 12.412 19.0867 12.2472 19.3334C12.0824 19.58 11.8481 19.7723 11.574 19.8858C11.2999 19.9993 10.9983 20.0291 10.7074 19.9712C10.4164 19.9133 10.1491 19.7704 9.93934 19.5607C9.72956 19.3509 9.5867 19.0836 9.52882 18.7926C9.47094 18.5017 9.50065 18.2001 9.61418 17.926C9.72771 17.6519 9.91997 17.4176 10.1666 17.2528C10.4133 17.088 10.7033 17 11 17C11.3978 17 11.7794 17.158 12.0607 17.4393C12.342 17.7206 12.5 18.1022 12.5 18.5ZM17.5 18.5C17.5 18.7967 17.412 19.0867 17.2472 19.3334C17.0824 19.58 16.8481 19.7723 16.574 19.8858C16.2999 19.9993 15.9983 20.0291 15.7074 19.9712C15.4164 19.9133 15.1491 19.7704 14.9393 19.5607C14.7296 19.3509 14.5867 19.0836 14.5288 18.7926C14.4709 18.5017 14.5006 18.2001 14.6142 17.926C14.7277 17.6519 14.92 17.4176 15.1666 17.2528C15.4133 17.088 15.7033 17 16 17C16.3978 17 16.7794 17.158 17.0607 17.4393C17.342 17.7206 17.5 18.1022 17.5 18.5ZM22.5 18.5C22.5 18.7967 22.412 19.0867 22.2472 19.3334C22.0824 19.58 21.8481 19.7723 21.574 19.8858C21.2999 19.9993 20.9983 20.0291 20.7074 19.9712C20.4164 19.9133 20.1491 19.7704 19.9393 19.5607C19.7296 19.3509 19.5867 19.0836 19.5288 18.7926C19.4709 18.5017 19.5007 18.2001 19.6142 17.926C19.7277 17.6519 19.92 17.4176 20.1666 17.2528C20.4133 17.088 20.7033 17 21 17C21.3978 17 21.7794 17.158 22.0607 17.4393C22.342 17.7206 22.5 18.1022 22.5 18.5ZM12.5 23.5C12.5 23.7967 12.412 24.0867 12.2472 24.3334C12.0824 24.58 11.8481 24.7723 11.574 24.8858C11.2999 24.9993 10.9983 25.0291 10.7074 24.9712C10.4164 24.9133 10.1491 24.7704 9.93934 24.5607C9.72956 24.3509 9.5867 24.0836 9.52882 23.7926C9.47094 23.5017 9.50065 23.2001 9.61418 22.926C9.72771 22.6519 9.91997 22.4176 10.1666 22.2528C10.4133 22.088 10.7033 22 11 22C11.3978 22 11.7794 22.158 12.0607 22.4393C12.342 22.7206 12.5 23.1022 12.5 23.5ZM17.5 23.5C17.5 23.7967 17.412 24.0867 17.2472 24.3334C17.0824 24.58 16.8481 24.7723 16.574 24.8858C16.2999 24.9993 15.9983 25.0291 15.7074 24.9712C15.4164 24.9133 15.1491 24.7704 14.9393 24.5607C14.7296 24.3509 14.5867 24.0836 14.5288 23.7926C14.4709 23.5017 14.5006 23.2001 14.6142 22.926C14.7277 22.6519 14.92 22.4176 15.1666 22.2528C15.4133 22.088 15.7033 22 16 22C16.3978 22 16.7794 22.158 17.0607 22.4393C17.342 22.7206 17.5 23.1022 17.5 23.5ZM22.5 23.5C22.5 23.7967 22.412 24.0867 22.2472 24.3334C22.0824 24.58 21.8481 24.7723 21.574 24.8858C21.2999 24.9993 20.9983 25.0291 20.7074 24.9712C20.4164 24.9133 20.1491 24.7704 19.9393 24.5607C19.7296 24.3509 19.5867 24.0836 19.5288 23.7926C19.4709 23.5017 19.5007 23.2001 19.6142 22.926C19.7277 22.6519 19.92 22.4176 20.1666 22.2528C20.4133 22.088 20.7033 22 21 22C21.3978 22 21.7794 22.158 22.0607 22.4393C22.342 22.7206 22.5 23.1022 22.5 23.5Z"></path>
+              </svg>
+            </div>
+            <div class="w-8 h-8 flex cursor-pointer" obsidianOpen="">
+              <svg id="custom-logo" width="32" height="32" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:100%;width:100%;">
+                <defs>
+                  <radialgradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-48 -185 123 -32 179 429.7)">
+                    <stop stop-color="#fff" stop-opacity=".4"></stop>
+                    <stop offset="1" stop-opacity=".1"></stop>
+                  </radialgradient>
+                  <radialgradient id="c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(41 -310 229 30 341.6 351.3)">
+                    <stop stop-color="#fff" stop-opacity=".6"></stop>
+                    <stop offset="1" stop-color="#fff" stop-opacity=".1"></stop>
+                  </radialgradient>
+                  <radialgradient id="d" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(57 -261 178 39 190.5 296.3)">
+                    <stop stop-color="#fff" stop-opacity=".8"></stop>
+                    <stop offset="1" stop-color="#fff" stop-opacity=".4"></stop>
+                  </radialgradient>
+                  <radialgradient id="e" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-79 -133 153 -90 321.4 464.2)">
+                    <stop stop-color="#fff" stop-opacity=".3"></stop>
+                    <stop offset="1" stop-opacity=".3"></stop>
+                  </radialgradient>
+                  <radialgradient id="f" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-29 136 -92 -20 300.7 149.9)">
+                    <stop stop-color="#fff" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#fff" stop-opacity=".2"></stop>
+                  </radialgradient>
+                  <radialgradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(72 73 -155 153 137.8 225.2)">
+                    <stop stop-color="#fff" stop-opacity=".2"></stop>
+                    <stop offset="1" stop-color="#fff" stop-opacity=".4"></stop>
+                  </radialgradient>
+                  <radialgradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(20 118 -251 43 215.1 273.7)">
+                    <stop stop-color="#fff" stop-opacity=".1"></stop>
+                    <stop offset="1" stop-color="#fff" stop-opacity=".3"></stop>
+                  </radialgradient>
+                  <radialgradient id="i" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-162 -85 268 -510 374.4 371.7)">
+                    <stop stop-color="#fff" stop-opacity=".2"></stop>
+                    <stop offset=".5" stop-color="#fff" stop-opacity=".2"></stop>
+                    <stop offset="1" stop-color="#fff" stop-opacity=".3"></stop>
+                  </radialgradient>
+                  <filter id="a" x="80.1" y="37" width="351.1" height="443.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
+                    <feblend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feblend>
+                    <fegaussianblur stdDeviation="6.5" result="effect1_foregroundBlur_744_9191"></fegaussianblur>
+                  </filter>
+                </defs>
+                <rect class="fill-black" id="logo-bg" width="512" height="512" rx="100"></rect>
+                <g filter="url(#a)">
+                  <path d="M359.2 437.5c-2.6 19-21.3 33.9-40 28.7-26.5-7.2-57.2-18.6-84.8-20.7l-42.4-3.2a28 28 0 0 1-18-8.3l-73-74.8a27.7 27.7 0 0 1-5.4-30.7s45-98.6 46.8-103.7c1.6-5.1 7.8-49.9 11.4-73.9a28 28 0 0 1 9-16.5L249 57.2a28 28 0 0 1 40.6 3.4l72.6 91.6a29.5 29.5 0 0 1 6.2 18.3c0 17.3 1.5 53 11.2 76a301.3 301.3 0 0 0 35.6 58.2 14 14 0 0 1 1 15.6c-6.3 10.7-18.9 31.3-36.6 57.6a142.2 142.2 0 0 0-20.5 59.6Z" fill="#000" fill-opacity=".3"></path>
+                </g>
+                <path id="arrow" d="M359.9 434.3c-2.6 19.1-21.3 34-40 28.9-26.4-7.3-57-18.7-84.7-20.8l-42.3-3.2a27.9 27.9 0 0 1-18-8.4l-73-75a27.9 27.9 0 0 1-5.4-31s45.1-99 46.8-104.2c1.7-5.1 7.8-50 11.4-74.2a28 28 0 0 1 9-16.6l86.2-77.5a28 28 0 0 1 40.6 3.5l72.5 92a29.7 29.7 0 0 1 6.2 18.3c0 17.4 1.5 53.2 11.1 76.3a303 303 0 0 0 35.6 58.5 14 14 0 0 1 1.1 15.7c-6.4 10.8-18.9 31.4-36.7 57.9a143.3 143.3 0 0 0-20.4 59.8Z" fill="#5500ff"></path>
+                <path d="M182.7 436.4c33.9-68.7 33-118 18.5-153-13.2-32.4-37.9-52.8-57.3-65.5-.4 1.9-1 3.7-1.8 5.4L96.5 324.8a27.9 27.9 0 0 0 5.5 31l72.9 75c2.3 2.3 5 4.2 7.8 5.6Z" fill="url(#b)"></path>
+                <path d="M274.9 297c9.1.9 18 2.9 26.8 6.1 27.8 10.4 53.1 33.8 74 78.9 1.5-2.6 3-5.1 4.6-7.5a1222 1222 0 0 0 36.7-57.9 14 14 0 0 0-1-15.7 303 303 0 0 1-35.7-58.5c-9.6-23-11-58.9-11.1-76.3 0-6.6-2.1-13.1-6.2-18.3l-72.5-92-1.2-1.5c5.3 17.5 5 31.5 1.7 44.2-3 11.8-8.6 22.5-14.5 33.8-2 3.8-4 7.7-5.9 11.7a140 140 0 0 0-15.8 58c-1 24.2 3.9 54.5 20 95Z" fill="url(#c)"></path>
+                <path d="M274.8 297c-16.1-40.5-21-70.8-20-95 1-24 8-42 15.8-58l6-11.7c5.8-11.3 11.3-22 14.4-33.8a78.5 78.5 0 0 0-1.7-44.2 28 28 0 0 0-39.4-2l-86.2 77.5a28 28 0 0 0-9 16.6L144.2 216c0 .7-.2 1.3-.3 2 19.4 12.6 44 33 57.3 65.3 2.6 6.4 4.8 13.1 6.4 20.4a200 200 0 0 1 67.2-6.8Z" fill="url(#d)"></path>
+                <path d="M320 463.2c18.6 5.1 37.3-9.8 39.9-29a153 153 0 0 1 15.9-52.2c-21-45.1-46.3-68.5-74-78.9-29.5-11-61.6-7.3-94.2.6 7.3 33.1 3 76.4-24.8 132.7 3.1 1.6 6.6 2.5 10.1 2.8l43.9 3.3c23.8 1.7 59.3 14 83.2 20.7Z" fill="url(#e)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M255 200.5c-1.1 24 1.9 51.4 18 91.8l-5-.5c-14.5-42.1-17.7-63.7-16.6-88 1-24.3 8.9-43 16.7-59 2-4 6.6-11.5 8.6-15.3 5.8-11.3 9.7-17.2 13-27.5 4.8-14.4 3.8-21.2 3.2-28 3.7 24.5-10.4 45.8-21 67.5a145 145 0 0 0-17 59Z" fill="url(#f)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M206 285.1c2 4.4 3.7 8 4.9 13.5l-4.3 1c-1.7-6.4-3-11-5.5-16.5-14.6-34.3-38-52-57-65 23 12.4 46.7 31.9 61.9 67Z" fill="url(#g)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M211.1 303c8 37.5-1 85.2-27.5 131.6 22.2-46 33-90.1 24-131l3.5-.7Z" fill="url(#h)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M302.7 299.5c43.5 16.3 60.3 52 72.8 81.9-15.5-31.2-37-65.7-74.4-78.5-28.4-9.8-52.4-8.6-93.5.7l-.9-4c43.6-10 66.4-11.2 96 0Z" fill="url(#i)"></path>
+              </svg>
+            </div>
+          </diV>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-4 col-end-7 row-start-7 row-end-10 p-6 overflow-hidden flex flex-col gap-4">
+          <p class="font-Manrope font-semibold text-white dark:text-black text-xl">Запуск скрипта с сервера</p>
+          <diV class="flex flex-wrap gap-4">
+            <button class="px-2 py-1 rounded-xl dark:bg-black bg-white font-Manrope font-normal text-sm text-black dark:text-white hover:text-primary hover:dark:text-gray-300" type="button" executionScript="">Запустить</button>
+          </diV>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-1 col-end-4 row-start-10 row-end-13 p-6 overflow-hidden flex flex-col gap-4">
+          <p class="font-Manrope font-semibold text-base dark:text-black text-white"> </p>
+        </div>
+        <div class="backdrop-blur-md border border-black dark:border-gray-200 bg-black dark:bg-gray-200 w-full h-full rounded-3xl col-start-4 col-end-7 row-start-10 row-end-13 p-6 overflow-hidden">
+          <p class="font-Manrope font-semibold text-base dark:text-black text-white"> </p>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./src/windows/index/js/renderer.js"></script>
+  </body>
+</html>

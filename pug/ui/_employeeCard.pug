@@ -1,0 +1,11 @@
+mixin employeeCard(items)
+    each item in items 
+        div(employeeCard="", class="@container/employeeCard")
+            div(class="grid grid-cols-auto-1fr items-center gap-2")
+                div(class="w-12 h-12 rounded-full overflow-hidden")
+                    img(src=item.src, alt="картинка", class="w-full h-full object-cover")
+                div(class="flex flex-col gap-1")
+                    div(class="flex flex-wrap gap-2 justify-between w-full")
+                        a(href="#", class="font-Manrope font-normal text-base text-white dark:text-black hover:text-primary cursor-pointer") #{item.name}
+                        p(class="font-Manrope font-normal text-sm text-white dark:text-black") #{item.date}
+                    p(class="font-Manrope font-normal text-sm text-white dark:text-black") #{item.depart}
