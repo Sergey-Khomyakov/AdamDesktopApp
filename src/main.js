@@ -10,7 +10,10 @@ import { privateKey, iv } from '../secretConfig.json';
 import started from 'electron-squirrel-startup';
 import log from 'electron-log/main';
 import {authorization} from '../src/settings/userConfig.json';
-import _ from 'update-electron-app';
+import updateApp from 'update-electron-app';
+
+
+updateApp();
 
 log.initialize();
 log.info(`Start Application: ${app.getVersion()} (${process.platform})`);
