@@ -1,7 +1,7 @@
 {
   "name": "adamweb",
   "productName": "adamweb",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
@@ -45,6 +45,7 @@
     "electron-squirrel-startup": "^1.0.1",
     "pug": "^3.0.3",
     "swiffy-slider": "^1.6.0",
+    "update-electron-app": "^3.1.0",
     "xml-js": "^1.6.11"
   }
 }

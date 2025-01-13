@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, nativeTheme, dialog, Notification, nativeImage, net, desktopCapturer, autoUpdater, screen } from 'electron';
+import { app, BrowserWindow, ipcMain, nativeTheme, dialog, Notification, nativeImage, net, desktopCapturer, screen } from 'electron';
 import { xml2json } from 'xml-js'
 import path from 'node:path';
 import fs from 'node:fs';
@@ -13,44 +13,25 @@ import log from 'electron-log/main';
 import {authorization} from '../src/settings/userConfig.json';
 import dropIconData from '../src/assets/icons/SelectionBackground.png';
 import AutoLaunch  from 'auto-launch';
+import {updateElectronApp, UpdateSourceType } from 'update-electron-app';
+
 
 const dropIcon = nativeImage.createFromDataURL(dropIconData)
 const isDevelopment = process.env.NODE_ENV === "production";
 
+// Update app start
+
+updateElectronApp({
+  updateSource: {
+    type: UpdateSourceType.ElectronPublicUpdateService,
+    repo: 'Sergey-Khomyakov/AdamDesktopApp/',
+    host: 'https://github.com',
+  },
+  updateInterval: '5 minutes',
+})
+// Update app end
+
 if(app.isPackaged){
-  // Update app start
-  const server = 'https://github.com/Sergey-Khomyakov/AdamDesktopApp'
-  const url = `${server}/releases/v${app.getVersion()}`
-  
-  autoUpdater.setFeedURL({ url })
-  console.log('Update URL: ', url)
-  
-  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-    const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title: 'Обновление доступно',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail:
-        'Новая версия доступна. Перезагрузите приложение для обновления.',
-    }
-  
-    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) autoUpdater.quitAndInstall()
-    })
-  })
-  
-  autoUpdater.on('error', (message) => {
-    console.error('There was a problem updating the application')
-    console.error(message)
-  })
-  
-  
-  setInterval(() => {
-    autoUpdater.checkForUpdates()
-  }, 60000)
-  
-  // Update app end
   
   // Auto louncher start
   if(isDevelopment){
