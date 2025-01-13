@@ -45,7 +45,6 @@
     "electron-squirrel-startup": "^1.0.1",
     "pug": "^3.0.3",
     "swiffy-slider": "^1.6.0",
-    "update-electron-app": "^3.1.0",
     "xml-js": "^1.6.11"
   }
 }

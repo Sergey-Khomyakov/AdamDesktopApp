@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, nativeTheme, dialog, Notification, nativeImage, net, desktopCapturer, screen } from 'electron';
+import { app, BrowserWindow, ipcMain, nativeTheme, dialog, Notification, nativeImage, net, desktopCapturer, autoUpdater, screen } from 'electron';
 import { xml2json } from 'xml-js'
 import path from 'node:path';
 import fs from 'node:fs';
@@ -11,46 +11,73 @@ import { privateKey, iv } from '../secretConfig.json';
 import started from 'electron-squirrel-startup';
 import log from 'electron-log/main';
 import {authorization} from '../src/settings/userConfig.json';
-import { updateElectronApp, UpdateSourceType } from 'update-electron-app';
 import dropIconData from '../src/assets/icons/SelectionBackground.png';
 import AutoLaunch  from 'auto-launch';
 
 const dropIcon = nativeImage.createFromDataURL(dropIconData)
-
-
 const isDevelopment = process.env.NODE_ENV === "production";
 
-if(isDevelopment){
-  const appFolder = path.dirname(process.execPath)
-  const updateExe = path.resolve(appFolder, '..', 'Update.exe')
-  const exeName = path.basename(process.execPath)
+if(app.isPackaged){
+  // Update app start
+  const server = 'https://github.com/Sergey-Khomyakov/AdamDesktopApp'
+  const url = `${server}/releases/v${app.getVersion()}`
   
-  var autoLouncher = new AutoLaunch({
-    name: 'AdamWeb',
-    path: path.join(appFolder, exeName)
-  });
+  autoUpdater.setFeedURL({ url })
+  console.log('Update URL: ', url)
   
-  autoLouncher.isEnabled()
-  .then(function(isEnabled){
-    if(isEnabled){
-        return;
+  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+    const dialogOpts = {
+      type: 'info',
+      buttons: ['Restart', 'Later'],
+      title: 'Обновление доступно',
+      message: process.platform === 'win32' ? releaseNotes : releaseName,
+      detail:
+        'Новая версия доступна. Перезагрузите приложение для обновления.',
     }
-    autoLouncher.enable();
+  
+    dialog.showMessageBox(dialogOpts).then((returnValue) => {
+      if (returnValue.response === 0) autoUpdater.quitAndInstall()
+    })
   })
-  .catch(function(err){
-      // handle error
-  });
+  
+  autoUpdater.on('error', (message) => {
+    console.error('There was a problem updating the application')
+    console.error(message)
+  })
+  
+  
+  setInterval(() => {
+    autoUpdater.checkForUpdates()
+  }, 60000)
+  
+  // Update app end
+  
+  // Auto louncher start
+  if(isDevelopment){
+    const appFolder = path.dirname(process.execPath)
+    const exeName = path.basename(process.execPath)
+    
+    var autoLouncher = new AutoLaunch({
+      name: 'AdamWeb',
+      path: path.join(appFolder, exeName)
+    });
+    
+    autoLouncher.isEnabled()
+    .then(function(isEnabled){
+      if(isEnabled){
+          return;
+      }
+      autoLouncher.enable();
+    })
+    .catch(function(err){
+        // handle error
+    });
+  }
+  
+  // Auto louncher end
 }
 
-updateElectronApp({
-  updateSource: {
-    type: UpdateSourceType.ElectronPublicUpdateService,
-    repo: 'Sergey-Khomyakov/AdamDesktopApp',
-    host: 'https://github.com/'
-  },
-  updateInterval: '1 hour',
-  logger: log
-})
+
 
 log.initialize();
 log.info(`Start Application: ${app.getVersion()} (${process.platform})`);
