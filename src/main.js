@@ -13,7 +13,7 @@ import log from 'electron-log/main';
 import {authorization} from '../src/settings/userConfig.json';
 import dropIconData from '../src/assets/icons/SelectionBackground.png';
 import AutoLaunch  from 'auto-launch';
-import {updateElectronApp, UpdateSourceType } from 'update-electron-app';
+import {updateElectronApp } from 'update-electron-app';
 
 
 log.initialize();
@@ -92,15 +92,7 @@ app.whenReady().then(() => {
 
   // Update app start
 
-    updateElectronApp({
-      updateSource: {
-        type: UpdateSourceType.ElectronPublicUpdateService,
-        repo: 'Sergey-Khomyakov/AdamDesktopApp',
-        host: 'https://github.com/'
-      },
-      updateInterval: '5 minutes',
-      logger: log
-    })
+    updateElectronApp(); 
   // Update app end
 
 

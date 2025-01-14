@@ -25,8 +25,7 @@ module.exports = {
           owner: 'Sergey-Khomyakov',
           name: 'AdamDesktopApp'
         },
-        prerelease: false,
-        draft: true
+        prerelease: true,
       }
     }
   ],
@@ -34,11 +33,14 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        authors: 'Sergey-Khomyakov',
+        description: 'Demo app Electron'
+      }
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['darwin', 'linux'],
     },
     {
       name: '@electron-forge/maker-pkg',
