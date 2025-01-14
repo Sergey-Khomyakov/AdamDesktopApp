@@ -91,6 +91,7 @@ const createWindow = () => {
 app.whenReady().then(() => {
 
   // Update app start
+
     updateElectronApp({
       updateSource: {
         type: UpdateSourceType.ElectronPublicUpdateService,
