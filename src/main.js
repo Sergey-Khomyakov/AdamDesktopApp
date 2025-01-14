@@ -16,20 +16,11 @@ import AutoLaunch  from 'auto-launch';
 import {updateElectronApp, UpdateSourceType } from 'update-electron-app';
 
 
+log.initialize();
+log.info(`Start Application: ${app.getVersion()} (${process.platform})`);
 const dropIcon = nativeImage.createFromDataURL(dropIconData)
 const isDevelopment = process.env.NODE_ENV === "production";
 
-// Update app start
-
-updateElectronApp({
-  updateSource: {
-    type: UpdateSourceType.ElectronPublicUpdateService,
-    repo: 'Sergey-Khomyakov/AdamDesktopApp/',
-    host: 'https://github.com',
-  },
-  updateInterval: '5 minutes',
-})
-// Update app end
 
 if(app.isPackaged){
   
@@ -60,8 +51,6 @@ if(app.isPackaged){
 
 
 
-log.initialize();
-log.info(`Start Application: ${app.getVersion()} (${process.platform})`);
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -101,6 +90,17 @@ const createWindow = () => {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
 
+  // Update app start
+    updateElectronApp({
+      updateSource: {
+        type: UpdateSourceType.ElectronPublicUpdateService,
+        repo: 'Sergey-Khomyakov/AdamDesktopApp',
+        host: 'https://github.com/'
+      },
+      updateInterval: '5 minutes',
+      logger: log
+    })
+  // Update app end
 
 
   createWindow();

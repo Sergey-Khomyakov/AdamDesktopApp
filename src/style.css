@@ -885,10 +885,6 @@ video {
   height: 100vh;
 }
 
-.h-14 {
-  height: 3.5rem;
-}
-
 .min-h-10 {
   min-height: 2.5rem;
 }
@@ -915,10 +911,6 @@ video {
 
 .w-16 {
   width: 4rem;
-}
-
-.w-2\/5 {
-  width: 40%;
 }
 
 .w-20 {
@@ -1021,10 +1013,6 @@ video {
 
 .grid-cols-auto-auto-1fr {
   grid-template-columns: auto auto 1fr;
-}
-
-.grid-cols-auto-auto-auto {
-  grid-template-columns: auto auto auto;
 }
 
 .grid-rows-12 {
